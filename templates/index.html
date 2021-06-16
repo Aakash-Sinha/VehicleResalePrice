@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Calculate Your Bike Price</h1>
+            <h3>(  Predictive Analysis  )</h3>
+            <br>
+            
+            
+           <center>
+            <input id="first" name="year" type="number" placeholder="Year of Purchase">
+           </center>
+            
+
+
+            <center>
+                <input id="second" name="ex_showroom_price" type="number" placeholder="Ex Showroom Price">
+            </center>
+            
+            
+            <center>
+            <input id="third" name="km_driven" required="required" type="number" placeholder="Kilometers Driven">
+            </center>
+
+            
+            <center>
+            <label for="owner">Owner type:</label>
+            <select name="owner" id="fourth" required="required">
+                <option value="First Owner">First Owner</option>
+                <option value="Second Owner">Second Owner</option>
+                <option value="Third Owner">Third Owner</option>
+            </select>
+            </center>
+
+
+            <center>
+                <label for="name">Brand Name:</label>
+                <select name="name" id="fifth" required="required">
+                    <option value="Honda">Honda</option>
+                    <option value="Bajaj">Bajaj</option>
+                    <option value="Hero">Hero</option>
+                    <option value="Yamaha">Yamaha</option>
+                    <option value="Royal">Royal</option>
+                    <option value="TVS">TVS</option>
+                    <option value="Suzuki">Suzuki</option>
+                </select>
+            </center>
+
+
+
+            
+            
+            <center>
+            <label for="seller_type_Individual">Dealer Type:</label>
+            <select name="seller_type_Individual" id="sixth" required="required">
+                <option value="Dealer">Dealer</option>
+                
+                <option value="Individual">Individual</option>
+            </select>
+            </center>
+
+            
+            <br>
+            <center>
+            <button class="button" id="sub" type="submit ">Calculate </button>
+            </center>
+            <br>
+
+
+
+
+        </form>
+
+
+		<center>
+        <br><h2>{{ prediction_text }}</h2>
+        </center>
+    </div>
+
+
+
+
+    <style>
+        h1 {
+  			text-shadow: 2px 2px 5px #3e8e41;
+ 			color: black;
+            text-align: center;
+			}	
+            
+         h2 {
+  			text-shadow: 2px 2px 5px #3e8e41;
+ 			color: black;
+            text-align: center;
+			}
+            
+         h3 {
+  			text-shadow: 2px 2px 5px #3e8e41;
+ 			color: black;
+            text-align: center;
+			}
+            
+            
+           body {
+            background-color: #e8f9fa;
+            
+        }
+            
+         input[type=number] {
+  				width: 30%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+          input[type=number]:focus {
+  				border: 3px solid #555;
+				}
+                
+            #sixth {
+  				width: 25%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+                
+            #seventh {
+  				width: 25%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+                
+             #eighth {
+  				width: 25%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+                
+             
+             #nineth {
+  				width: 24%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+
+                #fourth {
+  				width: 24%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+
+                #fifth {
+  				width: 24%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+  				border: none;
+  				background-color: #84e8dc;
+  				color: white;
+                text-align: center;
+				}
+                
+                
+                .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #84e8dc}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+         
+    </style>
+</body>
+
+</html>
